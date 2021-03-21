@@ -20,31 +20,31 @@ const ParlayForm = (props) => {
 
         if (secondOdds >= 0) {
             var decimaltwo = (bettwo/100)+1;
-        }else if (bettwo < 0) {
+        }else if (secondOdds < 0) {
             var decimaltwo = (100/Math.abs(bettwo))+1;
         }
 
         if (thirdOdds >= 0) {
             var decimalthree = (betthree/100)+1;
-        }else if (bettwo < 0) {
+        }else if (thirdOdds < 0) {
             var decimalthree = (100/Math.abs(betthree))+1;
         }
 
         if (fourthOdds >= 0) {
             var decimalfour = (betfour/100)+1;
-        }else if (betfour < 0) {
+        }else if (fourthOdds < 0) {
             var decimalfour = (100/Math.abs(betfour))+1;
         }
 
         if (fifthOdds >= 0) {
             var decimalfive = (betfive/100)+1;
-        }else if (betfive < 0) {
+        }else if (fifthOdds < 0) {
             var decimalfive = (100/Math.abs(betfive))+1;
         }
         
         const decimaltotal = decimalone * decimaltwo * decimalthree * decimalfour * decimalfive;
 
-        setPayout(decimaltotal * betamount);
+        setPayout(decimaltotal * betAmount);
 
 
     };
@@ -77,7 +77,7 @@ const ParlayForm = (props) => {
                     <Form.Control type="number" value="0" step="10" onChange={e => setFifthOdds(e.target.value)} />
                 </Form.group>
             </Form>
-            <h3>Parlay Payout: {payout ? `$ ${payout}` : null} </h3>
+            <h3>Parlay Payout: {payout ? `$${payout}` : null} </h3>
             <Button onClick={e => calculate()}>Calculate Payout</Button>
         </div>
     )
