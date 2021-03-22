@@ -1,5 +1,22 @@
 .App {
+  margin: 0 auto;
+  background-image: url(img/betting.jpg);
+  background-size: cover;
+  height: 1000px;
+  color: white;
   text-align: center;
+  display: flex;
+  vertical-align: top;
+  justify-content: center;
+}
+
+.main {
+  margin-top: 100px;
+  width: 50%;
+  height: 450px;
+  background-color: rgba(48,49,51,.8);
+  border-radius: 25px;
+  padding : 25px;
 }
 
 .App-logo {
