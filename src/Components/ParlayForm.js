@@ -12,41 +12,45 @@ const ParlayForm = (props) => {
     const [payout, setPayout] = useState("0");
 
     const calculate = () => {
+        var decimalone
+        var decimaltwo
+        var decimalthree
+        var decimalfour
+        var decimalfive
+
         if (firstOdds >= 0) {
-            var decimalone = (betone/100)+1;
+            decimalone = (firstOdds/100)+1;
         }else{
-            var decimalone = (100/Math.abs(betone))+1;
+            decimalone = (100/Math.abs(firstOdds))+1;
         }
 
         if (secondOdds >= 0) {
-            var decimaltwo = (bettwo/100)+1;
+            decimaltwo = (secondOdds/100)+1;
         }else if (secondOdds < 0) {
-            var decimaltwo = (100/Math.abs(bettwo))+1;
+            decimaltwo = (100/Math.abs(secondOdds))+1;
         }
 
         if (thirdOdds >= 0) {
-            var decimalthree = (betthree/100)+1;
+            decimalthree = (thirdOdds/100)+1;
         }else if (thirdOdds < 0) {
-            var decimalthree = (100/Math.abs(betthree))+1;
+            decimalthree = (100/Math.abs(thirdOdds))+1;
         }
 
         if (fourthOdds >= 0) {
-            var decimalfour = (betfour/100)+1;
+            decimalfour = (fourthOdds/100)+1;
         }else if (fourthOdds < 0) {
-            var decimalfour = (100/Math.abs(betfour))+1;
+            decimalfour = (100/Math.abs(fourthOdds))+1;
         }
 
         if (fifthOdds >= 0) {
-            var decimalfive = (betfive/100)+1;
+            decimalfive = (fifthOdds/100)+1;
         }else if (fifthOdds < 0) {
-            var decimalfive = (100/Math.abs(betfive))+1;
+            decimalfive = (100/Math.abs(fifthOdds))+1;
         }
         
         const decimaltotal = decimalone * decimaltwo * decimalthree * decimalfour * decimalfive;
 
         setPayout(decimaltotal * betAmount);
-
-
     };
 
     return(
